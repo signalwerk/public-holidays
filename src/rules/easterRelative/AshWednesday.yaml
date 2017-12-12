@@ -1,0 +1,10 @@
+Info: 46 days before Easter Day
+name:
+  DE-DE: Aschermittwoch
+  EN-US: Ash Wednesday
+start:
+  type: 'easter'
+math:
+  months: 0
+  weeks: 0
+  days: -46

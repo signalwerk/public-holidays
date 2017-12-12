@@ -1,0 +1,10 @@
+Info: 60 days after Easter Day
+name:
+  DE-DE: Fronleichnam
+  EN-US: Corpus Christi
+start:
+  type: 'easter'
+math:
+  months: 0
+  weeks: 0
+  days: 60

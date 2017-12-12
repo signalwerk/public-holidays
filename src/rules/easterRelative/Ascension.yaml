@@ -1,0 +1,10 @@
+Info: 39 days after Easter Day
+name:
+  DE-DE: Christi Himmelfahrt
+  EN-US: Feast of the Ascension
+start:
+  type: 'easter'
+math:
+  months: 0
+  weeks: 0
+  days: 39

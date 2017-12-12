@@ -1,0 +1,10 @@
+Info: Monday after Easter Day
+name:
+  DE-DE: Ostermontag
+  EN-US: Easter Monday
+start:
+  type: 'easter'
+math:
+  months: 0
+  weeks: 0
+  days: 1

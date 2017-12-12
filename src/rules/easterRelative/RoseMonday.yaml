@@ -1,0 +1,10 @@
+Info: 48 days before Easter Day
+name:
+  DE-DE: Rosenmontag
+  EN-US: Rose Monday
+start:
+  type: 'easter'
+math:
+  months: 0
+  weeks: 0
+  days: -48

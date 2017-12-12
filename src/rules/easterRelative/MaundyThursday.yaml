@@ -1,0 +1,10 @@
+Info: Thursday before Easter Day
+name:
+  DE-DE: Gründonnerstag
+  EN-US: Maundy Thursday
+start:
+  type: 'easter'
+math:
+  months: 0
+  weeks: 0
+  days: -3

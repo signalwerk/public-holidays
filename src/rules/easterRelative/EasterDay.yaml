@@ -1,0 +1,10 @@
+Info: Easter Day
+name:
+  DE-DE: Ostersonntag
+  EN-US: Easter Day
+start:
+  type: 'easter'
+math:
+  months: 0
+  weeks: 0
+  days: 0

@@ -1,0 +1,10 @@
+Info: 47 days before Easter Day
+name:
+  DE-DE: Fastnachtsdienstag
+  EN-US: Shrove Tuesday
+start:
+  type: 'easter'
+math:
+  months: 0
+  weeks: 0
+  days: -47

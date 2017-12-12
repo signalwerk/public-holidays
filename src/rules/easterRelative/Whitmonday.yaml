@@ -1,0 +1,10 @@
+Info: 50 days after Easter Day
+name:
+  DE-DE: Pfingstmontag
+  EN-US: Whitmonday
+start:
+  type: 'easter'
+math:
+  months: 0
+  weeks: 0
+  days: 50

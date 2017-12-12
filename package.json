@@ -1,0 +1,36 @@
+{
+  "name": "public-holidays",
+  "version": "0.0.1",
+  "description": "swiss publich holidays",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx babel-node ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/signalwerk/public-holidays.git"
+  },
+  "keywords": [
+    "clendar",
+    "ical",
+    "ics",
+    "switzerland"
+  ],
+  "author": "Stefan Huber – Signalwerk GmbH",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/signalwerk/public-holidays/issues"
+  },
+  "homepage": "https://github.com/signalwerk/public-holidays#readme",
+  "dependencies": {
+    "immutable-ics": "^0.4.0",
+    "js-yaml": "^3.10.0",
+    "moment": "^2.19.4",
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}

@@ -1,0 +1,10 @@
+Info: Good Friday is the Friday before Easter Day
+name:
+  DE-DE: Karfreitag
+  EN-US: Good Friday
+start:
+  type: 'easter'
+math:
+  months: 0
+  weeks: 0
+  days: -2

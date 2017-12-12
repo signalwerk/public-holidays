@@ -47,7 +47,11 @@ class PublicHoliday {
 
     switch(data.start.type) {
       case 'date':
-        date = moment.utc({ year: this.year, month: data.start.month - 1, day: data.start.day})
+        date = moment.utc({
+          year: data.start.year || this.year,
+          month: data.start.month - 1,
+          day: data.start.day,
+        })
         break;
       case 'easter':
         // code block

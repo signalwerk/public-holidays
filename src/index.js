@@ -161,5 +161,5 @@ ics.add('./src/rules/easterRelative/GoodFriday.yaml', "DE-DE");
 
 // ics.add('./src/data/IAD2017/semester2017HS.yaml');
 // ics.add('./src/data/IAD2017/semester2018FS.yaml');
-ics.ics('./IAD.ics');
+ics.ics('./public/all.ics');
 console.log('-- end ics generation --');

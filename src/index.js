@@ -157,7 +157,19 @@ class PublicHoliday {
 console.log('-- start ics generation --');
 let ics = new PublicHoliday(2018);
 ics.add('./src/rules/NewYearsDay.yaml', "DE-DE");
+
+
+ics.add('./src/rules/easterRelative/RoseMonday.yaml', "DE-DE");
+ics.add('./src/rules/easterRelative/ShroveTuesday.yaml', "DE-DE");
+ics.add('./src/rules/easterRelative/AshWednesday.yaml', "DE-DE");
+ics.add('./src/rules/easterRelative/MaundyThursday.yaml', "DE-DE");
 ics.add('./src/rules/easterRelative/GoodFriday.yaml', "DE-DE");
+ics.add('./src/rules/easterRelative/EasterDay.yaml', "DE-DE");
+ics.add('./src/rules/easterRelative/EasterMonday.yaml', "DE-DE");
+ics.add('./src/rules/easterRelative/Ascension.yaml', "DE-DE");
+ics.add('./src/rules/easterRelative/Whitsunday.yaml', "DE-DE");
+ics.add('./src/rules/easterRelative/Whitmonday.yaml', "DE-DE");
+ics.add('./src/rules/easterRelative/CorpusChristi.yaml', "DE-DE");
 
 // ics.add('./src/data/IAD2017/semester2017HS.yaml');
 // ics.add('./src/data/IAD2017/semester2018FS.yaml');

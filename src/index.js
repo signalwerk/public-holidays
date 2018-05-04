@@ -3,6 +3,7 @@ import yaml from "js-yaml";
 import moment from "moment";
 import uuid from "uuid";
 import { easterDate } from "./easterDate";
+import { relativeDate } from "./relativeDate";
 
 import { Component, Property } from "immutable-ics";
 
@@ -48,13 +49,20 @@ class PublicHoliday {
       case "easter":
         // code block
         let easter = easterDate(this.year);
-
         date = moment.utc({
           year: easter.year,
           month: easter.month - 1,
           day: easter.day
         });
+        break;
 
+      case "weekday":
+        date = relativeDate(
+          data.start.year,
+          data.start.month,
+          data.start.day,
+          data.start.weekday
+        );
         break;
       default:
         throw "wrong type: " + data.start.type;

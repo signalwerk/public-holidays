@@ -1,4 +1,8 @@
+
+
 # Public Holidays for Switzerland
+
+[![Build Status](https://travis-ci.org/signalwerk/public-holidays.svg?branch=master)](https://travis-ci.org/signalwerk/public-holidays)  
 
 ## ICS for iCalendar
 https://signalwerk.github.io/public-holidays/all.ics

@@ -13,6 +13,7 @@ class PublicHoliday {
   constructor(year) {
     this.year = year || now.year();
     this.events = [];
+    this.rules = [];
   }
 
   setYear(year) {
@@ -29,9 +30,15 @@ class PublicHoliday {
   }
 
   // add events based on a yaml
-  add(path, lang) {
+  addRule(path) {
     let data = this.loader(path);
-    this.process(data, lang);
+    this.rules.push(data);
+  }
+
+  generateFromRule(lang) {
+    this.rules.forEach(rule => {
+      this.process(rule, lang);
+    });
   }
 
   // process each week
@@ -46,6 +53,7 @@ class PublicHoliday {
           day: data.start.day
         });
         break;
+
       case "easter":
         // code block
         let easter = easterDate(this.year);
@@ -58,7 +66,7 @@ class PublicHoliday {
 
       case "weekday":
         date = relativeDate(
-          data.start.year,
+          this.year,
           data.start.month,
           data.start.day,
           data.start.weekday
@@ -157,40 +165,45 @@ class PublicHoliday {
 console.log("-- start ics generation --");
 let ics = new PublicHoliday();
 
-ics.setYear(2018);
-ics.add("./src/rules/easterRelative/RoseMonday.yaml", "DE-DE");
-ics.add("./src/rules/easterRelative/ShroveTuesday.yaml", "DE-DE");
-ics.add("./src/rules/easterRelative/AshWednesday.yaml", "DE-DE");
-ics.add("./src/rules/easterRelative/MaundyThursday.yaml", "DE-DE");
-ics.add("./src/rules/easterRelative/GoodFriday.yaml", "DE-DE");
-ics.add("./src/rules/easterRelative/EasterDay.yaml", "DE-DE");
-ics.add("./src/rules/easterRelative/EasterMonday.yaml", "DE-DE");
-ics.add("./src/rules/easterRelative/Ascension.yaml", "DE-DE");
-ics.add("./src/rules/easterRelative/Whitsunday.yaml", "DE-DE");
-ics.add("./src/rules/easterRelative/Whitmonday.yaml", "DE-DE");
-ics.add("./src/rules/easterRelative/CorpusChristi.yaml", "DE-DE");
+ics.addRule("./src/rules/easterRelative/RoseMonday.yaml");
+ics.addRule("./src/rules/easterRelative/ShroveTuesday.yaml");
+ics.addRule("./src/rules/easterRelative/AshWednesday.yaml");
+ics.addRule("./src/rules/easterRelative/MaundyThursday.yaml");
+ics.addRule("./src/rules/easterRelative/GoodFriday.yaml");
+ics.addRule("./src/rules/easterRelative/EasterDay.yaml");
+ics.addRule("./src/rules/easterRelative/EasterMonday.yaml");
+ics.addRule("./src/rules/easterRelative/Ascension.yaml");
+ics.addRule("./src/rules/easterRelative/Whitsunday.yaml");
+ics.addRule("./src/rules/easterRelative/Whitmonday.yaml");
+ics.addRule("./src/rules/easterRelative/CorpusChristi.yaml");
 
-ics.add("./src/rules/absolute/AllHallows.yaml", "DE-DE");
-ics.add("./src/rules/absolute/AssumptionofMary.yaml", "DE-DE");
-ics.add("./src/rules/absolute/Berchtoldstag.yaml", "DE-DE");
-ics.add("./src/rules/absolute/BoxingDay.yaml", "DE-DE");
-ics.add("./src/rules/absolute/ChristmasDay.yaml", "DE-DE");
-ics.add("./src/rules/absolute/ChristmasEve.yaml", "DE-DE");
-ics.add("./src/rules/absolute/Epiphany.yaml", "DE-DE");
-ics.add("./src/rules/absolute/GermanUnityDay.yaml", "DE-DE");
-ics.add("./src/rules/absolute/LabourDay.yaml", "DE-DE");
-ics.add("./src/rules/absolute/NewYearsDay.yaml", "DE-DE");
-ics.add("./src/rules/absolute/NewYearsEve.yaml", "DE-DE");
-ics.add("./src/rules/absolute/ReformationDay.yaml", "DE-DE");
-ics.add("./src/rules/absolute/SwissNationalDay.yaml", "DE-DE");
+ics.addRule("./src/rules/absolute/AllHallows.yaml");
+ics.addRule("./src/rules/absolute/AssumptionofMary.yaml");
+ics.addRule("./src/rules/absolute/Berchtoldstag.yaml");
+ics.addRule("./src/rules/absolute/BoxingDay.yaml");
+ics.addRule("./src/rules/absolute/ChristmasDay.yaml");
+ics.addRule("./src/rules/absolute/ChristmasEve.yaml");
+ics.addRule("./src/rules/absolute/Epiphany.yaml");
+ics.addRule("./src/rules/absolute/GermanUnityDay.yaml");
+ics.addRule("./src/rules/absolute/LabourDay.yaml");
+ics.addRule("./src/rules/absolute/NewYearsDay.yaml");
+ics.addRule("./src/rules/absolute/NewYearsEve.yaml");
+ics.addRule("./src/rules/absolute/ReformationDay.yaml");
+ics.addRule("./src/rules/absolute/SwissNationalDay.yaml");
 
-ics.add("./src/rules/relative/MothersDay.yaml", "DE-DE");
-ics.add("./src/rules/relative/Advent1.yaml", "DE-DE");
-ics.add("./src/rules/relative/Advent2.yaml", "DE-DE");
-ics.add("./src/rules/relative/Advent3.yaml", "DE-DE");
-ics.add("./src/rules/relative/Advent4.yaml", "DE-DE");
-ics.add("./src/rules/relative/PrayerofRepentanceCH.yaml", "DE-DE");
-ics.add("./src/rules/relative/PrayerofRepentance.yaml", "DE-DE");
+ics.addRule("./src/rules/relative/MothersDay.yaml");
+ics.addRule("./src/rules/relative/Advent1.yaml");
+ics.addRule("./src/rules/relative/Advent2.yaml");
+ics.addRule("./src/rules/relative/Advent3.yaml");
+ics.addRule("./src/rules/relative/Advent4.yaml");
+ics.addRule("./src/rules/relative/PrayerofRepentanceCH.yaml");
+ics.addRule("./src/rules/relative/PrayerofRepentance.yaml");
+
+for (var y = now.year() - 4; y <= now.year() + 4; y++) {
+  console.log("ADD: " + y);
+  ics.setYear(y);
+  ics.generateFromRule("DE-DE");
+}
 
 ics.ics("./public/all.ics");
 console.log("-- end ics generation --");

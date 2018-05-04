@@ -24,6 +24,10 @@ class PublicHoliday {
     this.events = [];
   }
 
+  setYear(year) {
+    this.year = year || now.year();
+  }
+
   // get yml data
   loader(path) {
     try {

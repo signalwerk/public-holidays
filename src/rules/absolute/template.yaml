@@ -1,8 +1,0 @@
-Info: Always at the same date.
-name:
-  DE-DE: --dayDE--
-  EN-US: --dayEN--
-start:
-  type: 'date'
-  month: --month--
-  day: --day--

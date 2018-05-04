@@ -1,0 +1,8 @@
+Info: Always at the same date.
+name:
+  DE-DE: Heiligabend
+  EN-US: Christmas Eve
+start:
+  type: 'date'
+  month: 12
+  day: 24

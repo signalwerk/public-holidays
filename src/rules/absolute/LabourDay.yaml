@@ -1,0 +1,8 @@
+Info: Always at the same date.
+name:
+  DE-DE: Tag der Arbeit
+  EN-US: Labour Day
+start:
+  type: 'date'
+  month: 5
+  day: 1

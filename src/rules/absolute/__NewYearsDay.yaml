@@ -3,7 +3,6 @@ name:
   DE-DE: Neujahrstag
   EN-US: New Year's Day
 start:
-  # type: 'easter'
 
   # type: 'nthWeekday'
   # relativeTo: '2017-05-12'
@@ -12,8 +11,3 @@ start:
   type: 'date'
   month: 1
   day: 1
-
-# math:
-#   type: 'add'
-#   # type: 'sub'
-#   value: '3 weeks'

@@ -1,0 +1,13 @@
+Info: 11 days befor First Sunday of Advent
+name:
+  DE-DE: Buß- und Bettag
+  EN-US: Prayer of Repentance
+start:
+  type: 'weekday'
+  month: 11
+  day: 26
+  weekday: 7 # Sunday
+math:
+  months: 0
+  weeks: 0
+  days: -11

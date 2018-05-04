@@ -1,0 +1,13 @@
+Info: In Switzerland 3rd Sunday in September
+name:
+  DE-DE: Eidgenössischer Bettag
+  EN-US: Prayer of Repentance (Switzerland)
+start:
+  type: 'weekday'
+  month: 9
+  day: 1
+  weekday: 7 # Sunday
+math:
+  months: 0
+  weeks: 2
+  days: 0

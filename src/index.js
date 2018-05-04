@@ -163,23 +163,42 @@ class PublicHoliday {
 
 
 console.log('-- start ics generation --');
-let ics = new PublicHoliday(2018);
-ics.add('./src/rules/NewYearsDay.yaml', "DE-DE");
+let ics = new PublicHoliday();
 
+ics.setYear(2018);
+ics.add("./src/rules/easterRelative/RoseMonday.yaml", "DE-DE");
+ics.add("./src/rules/easterRelative/ShroveTuesday.yaml", "DE-DE");
+ics.add("./src/rules/easterRelative/AshWednesday.yaml", "DE-DE");
+ics.add("./src/rules/easterRelative/MaundyThursday.yaml", "DE-DE");
+ics.add("./src/rules/easterRelative/GoodFriday.yaml", "DE-DE");
+ics.add("./src/rules/easterRelative/EasterDay.yaml", "DE-DE");
+ics.add("./src/rules/easterRelative/EasterMonday.yaml", "DE-DE");
+ics.add("./src/rules/easterRelative/Ascension.yaml", "DE-DE");
+ics.add("./src/rules/easterRelative/Whitsunday.yaml", "DE-DE");
+ics.add("./src/rules/easterRelative/Whitmonday.yaml", "DE-DE");
+ics.add("./src/rules/easterRelative/CorpusChristi.yaml", "DE-DE");
 
-ics.add('./src/rules/easterRelative/RoseMonday.yaml', "DE-DE");
-ics.add('./src/rules/easterRelative/ShroveTuesday.yaml', "DE-DE");
-ics.add('./src/rules/easterRelative/AshWednesday.yaml', "DE-DE");
-ics.add('./src/rules/easterRelative/MaundyThursday.yaml', "DE-DE");
-ics.add('./src/rules/easterRelative/GoodFriday.yaml', "DE-DE");
-ics.add('./src/rules/easterRelative/EasterDay.yaml', "DE-DE");
-ics.add('./src/rules/easterRelative/EasterMonday.yaml', "DE-DE");
-ics.add('./src/rules/easterRelative/Ascension.yaml', "DE-DE");
-ics.add('./src/rules/easterRelative/Whitsunday.yaml', "DE-DE");
-ics.add('./src/rules/easterRelative/Whitmonday.yaml', "DE-DE");
-ics.add('./src/rules/easterRelative/CorpusChristi.yaml', "DE-DE");
+ics.add("./src/rules/absolute/AllHallows.yaml", "DE-DE");
+ics.add("./src/rules/absolute/AssumptionofMary.yaml", "DE-DE");
+ics.add("./src/rules/absolute/Berchtoldstag.yaml", "DE-DE");
+ics.add("./src/rules/absolute/BoxingDay.yaml", "DE-DE");
+ics.add("./src/rules/absolute/ChristmasDay.yaml", "DE-DE");
+ics.add("./src/rules/absolute/ChristmasEve.yaml", "DE-DE");
+ics.add("./src/rules/absolute/Epiphany.yaml", "DE-DE");
+ics.add("./src/rules/absolute/GermanUnityDay.yaml", "DE-DE");
+ics.add("./src/rules/absolute/LabourDay.yaml", "DE-DE");
+ics.add("./src/rules/absolute/NewYearsDay.yaml", "DE-DE");
+ics.add("./src/rules/absolute/NewYearsEve.yaml", "DE-DE");
+ics.add("./src/rules/absolute/ReformationDay.yaml", "DE-DE");
+ics.add("./src/rules/absolute/SwissNationalDay.yaml", "DE-DE");
 
-// ics.add('./src/data/IAD2017/semester2017HS.yaml');
-// ics.add('./src/data/IAD2017/semester2018FS.yaml');
+ics.add("./src/rules/relative/MothersDay.yaml", "DE-DE");
+ics.add("./src/rules/relative/Advent1.yaml", "DE-DE");
+ics.add("./src/rules/relative/Advent2.yaml", "DE-DE");
+ics.add("./src/rules/relative/Advent3.yaml", "DE-DE");
+ics.add("./src/rules/relative/Advent4.yaml", "DE-DE");
+ics.add("./src/rules/relative/PrayerofRepentanceCH.yaml", "DE-DE");
+ics.add("./src/rules/relative/PrayerofRepentance.yaml", "DE-DE");
+
 ics.ics('./public/all.ics');
 console.log('-- end ics generation --');

@@ -1,0 +1,8 @@
+Info: Always at the same date.
+name:
+  DE-DE: Tag der Deutschen Einheit
+  EN-US: German Unity Day
+start:
+  type: 'date'
+  month: 10
+  day: 3

@@ -1,0 +1,8 @@
+Info: Always at the same date.
+name:
+  DE-DE: Heilige Drei Könige
+  EN-US: Epiphany
+start:
+  type: 'date'
+  month: 1
+  day: 6

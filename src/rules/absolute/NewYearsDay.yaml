@@ -1,0 +1,8 @@
+Info: Always at the same date.
+name:
+  DE-DE: Neujahrstag
+  EN-US: New Year's Day
+start:
+  type: 'date'
+  month: 1
+  day: 1

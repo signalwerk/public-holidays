@@ -1,0 +1,13 @@
+Info: Mothers day is on the second Sunday of May
+name:
+  DE-DE: Muttertag
+  EN-US: "Mother's Day"
+start:
+  type: 'weekday'
+  month: 5
+  day: 1
+  weekday: 7 # Sunday
+math:
+  months: 0
+  weeks: 1
+  days: 0

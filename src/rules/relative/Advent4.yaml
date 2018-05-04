@@ -1,0 +1,13 @@
+Info: Advent starts on the Sunday four weeks before Christmas Day. There are four Sundays in Advent, then Christmas Day. (24. December	-28d = 26. november)
+name:
+  DE-DE: 4. Advent
+  EN-US: Fourth Sunday of Advent
+start:
+  type: 'weekday'
+  month: 11
+  day: 26
+  weekday: 7 # Sunday
+math:
+  months: 0
+  weeks: 3
+  days: 0

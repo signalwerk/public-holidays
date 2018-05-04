@@ -1,0 +1,8 @@
+Info: Always at the same date.
+name:
+  DE-DE: Silvester
+  EN-US: New Year's Eve
+start:
+  type: 'date'
+  month: 12
+  day: 31

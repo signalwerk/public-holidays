@@ -1,7 +1,7 @@
 Info: Always at the same date.
 name:
-  DE-DE: Reformationstag
-  EN-US: Reformation Day
+  DE-DE: Halloween/Reformationstag
+  EN-US: Halloween/Reformation Day
 start:
   type: 'date'
   month: 10

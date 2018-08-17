@@ -188,7 +188,7 @@ ics.addRule("./src/rules/absolute/GermanUnityDay.yaml");
 ics.addRule("./src/rules/absolute/LabourDay.yaml");
 ics.addRule("./src/rules/absolute/NewYearsDay.yaml");
 ics.addRule("./src/rules/absolute/NewYearsEve.yaml");
-ics.addRule("./src/rules/absolute/ReformationDay.yaml");
+ics.addRule("./src/rules/absolute/Halloween.yaml");
 ics.addRule("./src/rules/absolute/SwissNationalDay.yaml");
 
 ics.addRule("./src/rules/relative/MothersDay.yaml");

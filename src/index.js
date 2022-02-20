@@ -2,8 +2,8 @@ import fs from "fs";
 import yaml from "js-yaml";
 import moment from "moment";
 import uuid from "uuid";
-import { easterDate } from "./easterDate";
-import { relativeDate } from "./relativeDate";
+import { easterDate } from "./easterDate.js";
+import { relativeDate } from "./relativeDate.js";
 
 import { Component, Property } from "immutable-ics";
 
@@ -36,7 +36,7 @@ class PublicHoliday {
   }
 
   generateFromRule(lang) {
-    this.rules.forEach(rule => {
+    this.rules.forEach((rule) => {
       this.process(rule, lang);
     });
   }
@@ -50,7 +50,7 @@ class PublicHoliday {
         date = moment.utc({
           year: data.start.year || this.year,
           month: data.start.month - 1,
-          day: data.start.day
+          day: data.start.day,
         });
         break;
 
@@ -60,7 +60,7 @@ class PublicHoliday {
         date = moment.utc({
           year: easter.year,
           month: easter.month - 1,
-          day: easter.day
+          day: easter.day,
         });
         break;
 
@@ -84,7 +84,7 @@ class PublicHoliday {
 
     this.events.push({
       title: data.name[lang],
-      date
+      date,
     });
   }
 
@@ -93,7 +93,7 @@ class PublicHoliday {
     var properties = [
       new Property({
         name: "UID",
-        value: uuid.v1()
+        value: uuid.v1(),
       }),
       new Property({
         name: "DTSTAMP",
@@ -101,33 +101,33 @@ class PublicHoliday {
         parameters: {
           // VALUE: 'DATE-TIME',
           // TZID: 'Europe/Zurich',
-        }
+        },
       }),
       new Property({
         name: "SUMMARY",
-        value: data.title
+        value: data.title,
       }),
       new Property({
         name: "DTSTART",
         value: data.date.toDate(),
         parameters: {
-          VALUE: "DATE"
+          VALUE: "DATE",
           // TZID: 'Europe/Zurich',
-        }
+        },
       }),
       new Property({
         name: "DTEND",
         value: data.date.add(1, "d").toDate(),
         parameters: {
-          VALUE: "DATE"
+          VALUE: "DATE",
           // TZID: 'Europe/Zurich',
-        }
-      })
+        },
+      }),
     ];
 
     var event = new Component({
       name: "VEVENT",
-      properties
+      properties,
     });
 
     return event;
@@ -137,7 +137,7 @@ class PublicHoliday {
   ics(path) {
     var events = [];
 
-    this.events.forEach(value => {
+    this.events.forEach((value) => {
       events.push(this.icsEvent(value));
     });
 
@@ -147,13 +147,13 @@ class PublicHoliday {
       properties: [
         new Property({
           name: "VERSION",
-          value: 2
+          value: 2,
         }),
         new Property({
           name: "PRODID",
-          value: "PublicHoliday"
-        })
-      ]
+          value: "PublicHoliday",
+        }),
+      ],
     });
 
     let out = calendar.toString();
@@ -190,6 +190,7 @@ ics.addRule("./src/rules/absolute/NewYearsDay.yaml");
 ics.addRule("./src/rules/absolute/NewYearsEve.yaml");
 ics.addRule("./src/rules/absolute/Halloween.yaml");
 ics.addRule("./src/rules/absolute/SwissNationalDay.yaml");
+ics.addRule("./src/rules/absolute/ValentinesDay.yaml");
 
 ics.addRule("./src/rules/relative/MothersDay.yaml");
 ics.addRule("./src/rules/relative/Advent1.yaml");
@@ -205,5 +206,7 @@ for (var y = now.year() - 4; y <= now.year() + 4; y++) {
   ics.generateFromRule("DE-DE");
 }
 
-ics.ics("./public/all.ics");
+fs.mkdirSync("./dist", { recursive: true });
+
+ics.ics("./dist/all.ics");
 console.log("-- end ics generation --");

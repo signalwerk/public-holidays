@@ -43,6 +43,6 @@ export function easterDate(y) {
   return {
     year: y,
     month: m,
-    day: d
+    day: d,
   };
 } // -- easterDate

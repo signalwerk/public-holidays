@@ -1,0 +1,8 @@
+Info: Always at the same date.
+name:
+  DE-DE: Valentinstag
+  EN-US: Valentine's Day
+start:
+  type: 'date'
+  month: 2
+  day: 14

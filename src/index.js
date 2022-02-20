@@ -1,11 +1,12 @@
 import fs from "fs";
 import yaml from "js-yaml";
 import moment from "moment";
-import uuid from "uuid";
+import { v5 as uuidv5 } from "uuid";
 import { easterDate } from "./easterDate.js";
 import { relativeDate } from "./relativeDate.js";
 
 import { Component, Property } from "immutable-ics";
+const UUID_NAMESPACE = "e17cad84-92a3-11ec-b909-0242ac120002";
 
 const now = new moment();
 
@@ -93,11 +94,11 @@ class PublicHoliday {
     var properties = [
       new Property({
         name: "UID",
-        value: uuid.v1(),
+        value: uuidv5(JSON.stringify(data), UUID_NAMESPACE),
       }),
       new Property({
         name: "DTSTAMP",
-        value: now.toDate(),
+        value: data.date.toDate(), // keep stable
         parameters: {
           // VALUE: 'DATE-TIME',
           // TZID: 'Europe/Zurich',
